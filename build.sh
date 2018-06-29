@@ -4,8 +4,13 @@ name=armament-tuning
 
 rm -f $name.pk3 \
 && \
+git log --pretty=format:"-%d %ai %s%n" > changelog.txt \
+&& \
 zip $name.pk3 \
     *.txt \
+    *.md \
+&& \
+cp $name.pk3 $name-$(git describe --abbrev=0 --tags).pk3 \
 && \
 gzdoom -glversion 3 \
        -file \
