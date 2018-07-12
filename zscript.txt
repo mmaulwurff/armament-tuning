@@ -77,8 +77,11 @@ class m8f_at_EventHandler : EventHandler
     {
       CVar  ammoMultiplierCVar = CVar.FindCVar("m8f_wm_AmmoMultiplier");
       float ammoMultiplier     = ammoMultiplierCVar.GetFloat();
-      a.Amount *= ammoMultiplier;
-      if (a.Amount == 0) { a.Amount = 1; }
+      if (a.Amount != 0) // why there would be ammo not giving ammo? I don't know.
+      {
+        a.Amount *= ammoMultiplier;
+        if (a.Amount == 0) { a.Amount = 1; }
+      }
     }
     else
     {
@@ -88,10 +91,17 @@ class m8f_at_EventHandler : EventHandler
         CVar  ammoMultiplierCVar = CVar.FindCVar("m8f_wm_AmmoMultiplier");
         float ammoMultiplier     = ammoMultiplierCVar.GetFloat();
 
-        w.AmmoGive1 *= ammoMultiplier;
-        w.AmmoGive2 *= ammoMultiplier;
-        if (w.AmmoGive1 == 0 ) { w.AmmoGive1 = 1; }
-        if (w.AmmoGive2 == 0 ) { w.AmmoGive2 = 1; }
+        if (w.AmmoGive1 != 0)
+        {
+          w.AmmoGive1 *= ammoMultiplier;
+          if (w.AmmoGive1 == 0 ) { w.AmmoGive1 = 1; }
+        }
+
+        if (w.AmmoGive2 != 0)
+        {
+          w.AmmoGive2 *= ammoMultiplier;
+          if (w.AmmoGive2 == 0 ) { w.AmmoGive2 = 1; }
+        }
 
         // spawn light
         CVar lightUpCVar = CVar.FindCVar("m8f_wm_LightNotAcquiredWeapons");
