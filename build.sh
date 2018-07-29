@@ -9,6 +9,7 @@ git log --pretty=format:"-%d %ai %s%n" > changelog.txt \
 zip $name.pk3 \
     *.txt \
     *.md \
+    LICENSE \
 && \
 cp $name.pk3 $name-$(git describe --abbrev=0 --tags).pk3 \
 && \
