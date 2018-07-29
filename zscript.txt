@@ -74,6 +74,12 @@ class m8f_at_EventHandler : EventHandler
       MaybeDisableWeaponCrushing(thing);
     }
 
+    if (thing.bMISSILE)
+      {
+        float missileSizeMultiplier = CVar.FindCVar("m8f_wm_MissileSizeMultiplier").GetFloat();
+        thing.scale *= missileSizeMultiplier;
+      }
+
     Inventory i = Inventory(thing);
     if (i == null) { return; }
     if (i.owner) { return; }

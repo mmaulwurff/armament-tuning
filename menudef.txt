@@ -21,6 +21,9 @@ OptionMenu "m8f_at_OptionsMenu"
   StaticText "Changes take effect on new level start.", "Black"
 
   StaticText ""
+  Slider "Missile visible size multiplier", "m8f_wm_MissileSizeMultiplier", 0.1, 3.0, 0.1
+
+  StaticText ""
   Option "Disable gibbing", "m8f_wm_DisableGibbing", "OnOff"
   Option "Disable weapon crushing", "m8f_wm_DisableWeaponCrushing", "OnOff"
   Option "Disable ammo crushing", "m8f_wm_DisableAmmoCrushing", "OnOff"
