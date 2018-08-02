@@ -74,7 +74,10 @@ class m8f_at_EventHandler : EventHandler
 
   override void WorldThingSpawned(WorldEvent e)
   {
+    if (e == null) { return; }
+
     Actor thing = e.thing;
+    if (thing == null) { return; }
 
     MaybeDisableGibbing(thing);
 
