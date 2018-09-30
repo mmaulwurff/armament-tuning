@@ -84,21 +84,22 @@ class m8f_at_EventHandler : EventHandler
     Weapon w = Weapon(thing);
     if (w != null)
     {
-      CVar  kickbackMultiplierCVar = CVar.FindCVar("m8f_wm_KickbackMultiplier");
-      float kickbackMultiplier     = kickbackMultiplierCVar.GetFloat();
-      w.Kickback *= kickBackMultiplier;
+      CVar   kickbackMultiplierCVar = CVar.FindCVar("m8f_wm_KickbackMultiplier");
+      double kickbackMultiplier     = kickbackMultiplierCVar.GetFloat();
+      w.Kickback = int(w.Kickback * kickBackMultiplier);
 
-      CVar  bobMultiplierCVar = CVar.FindCVar("m8f_wm_BobMultiplier");
-      float bobMultiplier     = bobMultiplierCVar.GetFloat();
+      CVar   bobMultiplierCVar = CVar.FindCVar("m8f_wm_BobMultiplier");
+      double bobMultiplier     = bobMultiplierCVar.GetFloat();
       w.BobRangeX *= bobMultiplier;
       w.BobRangeY *= bobMultiplier;
 
       MaybeDisableWeaponCrushing(thing);
+
     }
 
     if (thing.bMISSILE)
       {
-        float missileSizeMultiplier = CVar.FindCVar("m8f_wm_MissileSizeMultiplier").GetFloat();
+        double missileSizeMultiplier = CVar.FindCVar("m8f_wm_MissileSizeMultiplier").GetFloat();
         thing.scale *= missileSizeMultiplier;
       }
 
@@ -109,11 +110,11 @@ class m8f_at_EventHandler : EventHandler
     Ammo a = Ammo(thing);
     if (a != null)
     {
-      CVar  ammoMultiplierCVar = CVar.FindCVar("m8f_wm_AmmoMultiplier");
-      float ammoMultiplier     = ammoMultiplierCVar.GetFloat();
+      CVar   ammoMultiplierCVar = CVar.FindCVar("m8f_wm_AmmoMultiplier");
+      double ammoMultiplier     = ammoMultiplierCVar.GetFloat();
       if (a.Amount != 0) // why there would be ammo not giving ammo? I don't know.
       {
-        a.Amount *= ammoMultiplier;
+        a.Amount = int(a.Amount * ammoMultiplier);
         if (a.Amount == 0) { a.Amount = 1; }
       }
 
@@ -124,18 +125,18 @@ class m8f_at_EventHandler : EventHandler
       Weapon w = Weapon(thing);
       if (w != null)
       {
-        CVar  ammoMultiplierCVar = CVar.FindCVar("m8f_wm_AmmoMultiplier");
-        float ammoMultiplier     = ammoMultiplierCVar.GetFloat();
+        CVar   ammoMultiplierCVar = CVar.FindCVar("m8f_wm_AmmoMultiplier");
+        double ammoMultiplier     = ammoMultiplierCVar.GetFloat();
 
         if (w.AmmoGive1 != 0)
         {
-          w.AmmoGive1 *= ammoMultiplier;
+          w.AmmoGive1 = int(w.AmmoGive1 * ammoMultiplier);
           if (w.AmmoGive1 == 0 ) { w.AmmoGive1 = 1; }
         }
 
         if (w.AmmoGive2 != 0)
         {
-          w.AmmoGive2 *= ammoMultiplier;
+          w.AmmoGive2 = int(w.AmmoGive2 * ammoMultiplier);
           if (w.AmmoGive2 == 0 ) { w.AmmoGive2 = 1; }
         }
 
