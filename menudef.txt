@@ -36,16 +36,19 @@ OptionMenu "m8f_at_OptionsMenu"
   StaticText "Doesn't work for mods with custom weapon pickups.", "Black"
 
   StaticText ""
-  StaticText "Commands: Visuals", "Blue"
+  Option "Bright Ammo", "m8f_at_BrightAmmo", "OnOff"
+
+  StaticText ""
+  StaticText "Commands: Visuals", 1
   Command "Clear decals", "wm_cleardecals"
 
   StaticText ""
-  StaticText "Commands: Cheats", "Blue"
+  StaticText "Commands: Cheats", 1
   Command "Give some ammo for this weapon", "netevent m8f_at_givethisammo"
   StaticText "When you need to cheat, but IDFA is too much", "Black"
 
   StaticText ""
-  StaticText "Commands: Game", "Blue"
+  StaticText "Commands: Game", 1
   SafeCommand "Restart this level", "wm_restart_this_level"
   SafeCommand "Next level", "wm_next_level"
 
@@ -56,12 +59,12 @@ OptionMenu "m8f_wm_GZDoomWeapon"
 {
   Title "GZDoom Weapon Settings"
 
-  StaticText "HUD", "Blue"
+  StaticText "HUD", 1
   Option "$HUDMNU_CROSSHAIR", "crosshair", "Crosshairs"
   Option "$HUDMNU_FORCECROSSHAIR", "crosshairforce", "OnOff"
 
   StaticText ""
-  StaticText "Gameplay", "Blue"
+  StaticText "Gameplay", 1
   Option "Switch weapon on pickups", "neverswitchonpickup", "OffOn"
   Slider "Autoaim", "autoaim", 0.0, 35.0, 35.0
 
@@ -69,7 +72,7 @@ OptionMenu "m8f_wm_GZDoomWeapon"
   StaticText "Rockets fly through decorations", "Black"
 
   StaticText ""
-  StaticText "Display", "Blue"
+  StaticText "Display", 1
   Option "$DSPLYMNU_ROCKETTRAILS", "cl_rockettrails", "RocketTrailTypes"
   Option "$DSPLYMNU_BLOODTYPE", "cl_bloodtype", "BloodTypes"
   Option "$DSPLYMNU_PUFFTYPE", "cl_pufftype", "PuffTypes"

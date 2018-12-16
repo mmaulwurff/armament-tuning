@@ -72,6 +72,12 @@ class m8f_at_EventHandler : EventHandler
     if (disableGibbing) { a.bNOEXTREMEDEATH = true; }
   }
 
+  void MaybeBrightAmmo(Actor a)
+  {
+    bool brightAmmo = CVar.GetCVar("m8f_at_BrightAmmo").GetInt();
+    if (brightAmmo) { a.bBRIGHT = true; }
+  }
+
   override void WorldThingSpawned(WorldEvent e)
   {
     if (e == null) { return; }
@@ -119,6 +125,7 @@ class m8f_at_EventHandler : EventHandler
       }
 
       MaybeDisableAmmoCrushing(thing);
+      MaybeBrightAmmo(thing);
     }
     else
     {

@@ -9,3 +9,5 @@ server float m8f_wm_BobMultiplier           = 1.0;
 server float m8f_wm_MissileSizeMultiplier   = 1.0;
 
 user   int   m8f_wm_SavedMaxDecals;
+
+server bool  m8f_at_BrightAmmo              = false;
