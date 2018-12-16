@@ -1,3 +1,14 @@
-*~
-*.pk3
+*
+!*/
+*/*
+
+!.gitignore
+
+!**.txt
+!**.md
+!**.sh
+!**.org
+!**.png
+!**.ogg
+
 changelog.txt

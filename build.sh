@@ -8,6 +8,7 @@ git log --pretty=format:"-%d %ai %s%n" > changelog.txt \
 && \
 zip $name.pk3 \
     *.txt \
+    zscript/*.txt \
     *.md \
     LICENSE \
 && \
