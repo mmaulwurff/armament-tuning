@@ -52,5 +52,5 @@ version "3.2.0"
 **
 */
 
-#include "zscript/m8f_at_EventHandler.txt"
-#include "zscript/m8f_at_WM_Lighter.txt"
+#include "zscript/m8f_at_EventHandler.zs"
+#include "zscript/m8f_at_WM_Lighter.zs"
