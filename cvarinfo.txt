@@ -2,6 +2,7 @@ server bool  m8f_wm_DisableGibbing          = false;
 server bool  m8f_wm_DisableWeaponCrushing   = false;
 server bool  m8f_wm_DisableAmmoCrushing     = false;
 server bool  m8f_wm_LightNotAcquiredWeapons = false;
+server bool  m8f_wm_DisableItemCrushing     = false;
 
 server float m8f_wm_AmmoMultiplier          = 1.0;
 server float m8f_wm_KickbackMultiplier      = 1.0;

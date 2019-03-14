@@ -25,18 +25,19 @@ class m8f_at_EventHandler : EventHandler
       w.BobRangeY *= bobMultiplier;
 
       MaybeDisableWeaponCrushing(thing);
-
     }
 
     if (thing.bMISSILE)
-      {
-        double missileSizeMultiplier = CVar.FindCVar("m8f_wm_MissileSizeMultiplier").GetFloat();
-        thing.scale *= missileSizeMultiplier;
-      }
+    {
+      double missileSizeMultiplier = CVar.FindCVar("m8f_wm_MissileSizeMultiplier").GetFloat();
+      thing.scale *= missileSizeMultiplier;
+    }
 
     Inventory i = Inventory(thing);
     if (i == null) { return; }
     if (i.owner) { return; }
+
+    MaybeDisableItemCrushing(i);
 
     Ammo a = Ammo(thing);
     if (a != null)
@@ -118,6 +119,12 @@ class m8f_at_EventHandler : EventHandler
   {
     bool disableGibbing = CVar.FindCVar("m8f_wm_DisableGibbing").GetInt();
     if (disableGibbing) { a.bNOEXTREMEDEATH = true; }
+  }
+
+  private void MaybeDisableItemCrushing(Inventory item)
+  {
+    bool disableCrushing = CVar.FindCVar("m8f_wm_DisableItemCrushing").GetInt();
+    if (disableCrushing) { item.bDONTGIB = true; }
   }
 
   private void MaybeBrightAmmo(Actor a)
