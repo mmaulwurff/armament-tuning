@@ -27,6 +27,7 @@ OptionMenu "m8f_at_OptionsMenu"
   Option "Disable gibbing", "m8f_wm_DisableGibbing", "OnOff"
   Option "Disable weapon crushing", "m8f_wm_DisableWeaponCrushing", "OnOff"
   Option "Disable ammo crushing", "m8f_wm_DisableAmmoCrushing", "OnOff"
+  Option "Disable item crushing", "m8f_wm_DisableItemCrushing", "OnOff"
   StaticText "Changes take effect on new level start.", "Black"
 
   StaticText ""
